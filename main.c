@@ -104,6 +104,11 @@ int main(void)
             desempilhar(pilha);
             break;
         case CONSULTAR:
+            if (pilha->topo == NULL)
+            {
+                perror("não existem nodos nessa pilha");
+                break;
+            }
             printf("topo = %d\n", (int)consultar(pilha)->dado);
             break;
         case DESTRUIR:
